@@ -1,0 +1,40 @@
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+}
+
+.btn.add-on{
+	height:30px;
+}
+
+.homeBox{
+	width:auto;
+}
+.homeBox form{
+	text-align:center;
+	margin-left: 2em;
+	margin-top: 1em;
+}
+.homeBox .stars{
+	text-align:center;
+}
+.homeBox .stars i{
+	margin: 0 25px 0 25px;
+	-webkit-transform: scale(2,2);
+}
+
+.nowrap{
+	white-space:nowrap;
+}
+.purchases{
+	max-height:350px;
+	overflow: scroll;
+}
+td.right{
+	text-align:right;
+}
