@@ -1,0 +1,55 @@
+<div class="page-header">
+  <h1>SBX<small><a href="#">Small Business eXchange</a></small></h1>
+</div>
+
+<div class="row">
+	<h2><%= company.attr('Name') %></h2>
+	<dl>
+		<dt>Address</dt>
+		<dd>
+			<address>
+				<%= company.attr('Address/Phone').replace(', , ','\n') %>
+			</address>
+		</dd>
+
+		<dt>Phone</dt>
+		<dd>TODO</dd>
+
+		<dt>Website</dt>
+		<dd>TODO</dd>
+
+		<dt>Email</dt>
+		<dd><%= company.attr('Email Address (Public Contact)') %></dd>
+
+		<dt>CBE #</dt>
+		<dd><%= company.attr('CBE#') %></dd>
+
+		<dt>Certification Categories</dt>
+		<dd><%= company.attr('Certification Categories') %></dd>
+		
+		<dt>Expiration Date</dt>
+		<dd><%= company.attr('Expiration Date') %></dd>
+	</dl>
+
+	<h3>Prior Contracts</h3>
+	<div class="purchases">
+		<table class="table table-striped table-condensed">
+			<tr>
+				<th>Date</th>
+				<th>Agency</th>
+				<th>Item/Service</th>
+				<th>$Amount</th>
+				<th>Funding Source</th>
+			</tr>
+		<% list(purchases,function(purchase){ %>
+			<tr <%= (el) -> el.data('purchase',purchase) %>>
+				<td class="nowrap"><%= moment(purchase.approveddate).format("YYYY-MM-DD") %></td>
+				<td><%= purchase.agency %></td>
+				<td><%= purchase.objecttitle %></td>
+				<td class="right">$<%= parseFloat(purchase.lineamount).toFixed(2) %></td>
+				<td><%= purchase.funddescription %></td>
+			</tr>
+		<% }) %>
+		</table>
+	</div>
+</div>
